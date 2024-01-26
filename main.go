@@ -35,6 +35,10 @@ type value struct {
 }
 
 func (l *doublyLinkedList) push(e *node) {
+	if e == nil {
+		return
+	}
+
 	l.length++
 
 	if l.head == nil {
@@ -49,7 +53,7 @@ func (l *doublyLinkedList) push(e *node) {
 }
 
 func (l *doublyLinkedList) delete(e *node) {
-	if l.length == 0 {
+	if e == nil || l.length == 0 {
 		return
 	}
 
